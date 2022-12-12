@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Hello World loololololol"/>
-    <img alt="Vue logo" src="../assets/bold_and_brash.png">
+    <h1>Das ist die Homepage</h1>
+    <img alt="Bold and Brash" src="../assets/bold_and_brash.png" width="600" height="400">
   </div>
 </template>
 
@@ -12,6 +12,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
 export default {
   name: 'HomeView',
   components: {
+    // eslint-disable-next-line vue/no-unused-components
     HelloWorld
   }
 }
