@@ -11,8 +11,8 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/einfuegen',
-    name: 'einfuegen',
+    path: '/bearbeiten',
+    name: 'bearbeiten',
     component: EinfuegenView
   },
   {
