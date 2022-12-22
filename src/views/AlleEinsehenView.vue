@@ -1,14 +1,5 @@
 <template>
-  <br>
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="ID" aria-label="Recipient's username" aria-describedby="button-addon2">
-    <input type="text" class="form-control" placeholder="Name" aria-label="Recipient's username" aria-describedby="button-addon2">
-    <input type="text" class="form-control" placeholder="Tageszeit" aria-label="Recipient's username" aria-describedby="button-addon2">
-    <input type="text" class="form-control" placeholder="Vegan" aria-label="Recipient's username" aria-describedby="button-addon2">
-    <input type="text" class="form-control" placeholder="Zubereitungsdauer" aria-label="Recipient's username" aria-describedby="button-addon2">
-    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-  </div>
-  <br>
+  <div><h1>Alle verfügbaren Gerichte</h1></div>
   <div>
     <table class="table table-striped">
       <thead>
