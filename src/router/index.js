@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import EinfuegenView from '@/views/EinfuegenView'
 import AuslesenView from '@/views/AuslesenView'
 import alleEinsehenView from '@/views/AlleEinsehenView'
+import LoeschenView from '@/views/LoeschenView'
 
 const routes = [
   {
@@ -11,8 +12,8 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/bearbeiten',
-    name: 'bearbeiten',
+    path: '/hinzufuegen',
+    name: 'hinzufuegen',
     component: EinfuegenView
   },
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/alle-Einsehen',
     name: 'alleEinsehen',
     component: alleEinsehenView
+  },
+  {
+    path: '/loeschen',
+    name: 'loeschen',
+    component: LoeschenView
   }
 ]
 

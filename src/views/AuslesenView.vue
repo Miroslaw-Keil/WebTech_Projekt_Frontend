@@ -62,18 +62,7 @@ export default {
   },
 
   mounted () {
-    const endpoint = 'http://localhost:8080/api/v1/gerichte/'
-    const requestOptions = {
-      method: 'GET',
-      redirect: 'follow'
-    }
-
-    fetch(endpoint, requestOptions)
-      .then(response => response.json())
-      .then(result => result.forEach(gericht => {
-        this.gerichte.push(gericht)
-      }))
-      .catch(error => console.log('error', error))
+    this.gerichte = []
   }
 }
 </script>

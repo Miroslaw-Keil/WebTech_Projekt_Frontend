@@ -14,7 +14,7 @@
         <label for="tageszeit" class="col-sm-2 col-form-label">Tageszeit</label>
         <div class="col-sm-10">
           <select id="tageszeit" class="form-select" v-model="tageszeit" required>
-            <option value="" selected disabled>Choose...</option>
+            <option value="" >Choose...</option>
             <option value="Morgen">Morgen</option>
             <option value="Mittag">Mittag</option>
             <option value="Abend">Abend</option>
@@ -55,7 +55,7 @@
 
 <script>
 export default {
-  name: 'EinfügenView',
+  name: 'EinfuegenView',
   data() {
     return {
       name: '',
