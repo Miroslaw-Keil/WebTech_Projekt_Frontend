@@ -1,11 +1,14 @@
 <template>
   <div class="extract">
-    <h1>Test Seite um nach Gerichten zu suchen.</h1>
+    <h1>Seite um ein zufälliges Gericht zu erhalten</h1>
   </div>
-  <div class="input-group mb-3">
-    <input type="number" class="form-control" placeholder="ID" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="id">
-    <button :disabled="id === undefined || id === ''" @click="getGerichtByID" class="btn btn-outline-secondary" type="button" id="button-addon2">Get by ID</button>
+  <br>
+  <div>
+    <div class="vertical-center">
+      <button @click="getRandomGericht" type="button" class="btn btn-primary">Randomize</button>
+    </div>
   </div>
+  <br>
   <div>
     <table class="table table-striped">
       <thead>
@@ -38,15 +41,13 @@ export default {
   data () {
     return {
       gerichte: [],
-      id: null
+      zwischenspeicher: []
     }
   },
 
   methods: {
-    getGerichtByID() {
-      this.gerichte = []
-
-      const endpoint = 'http://localhost:8080/api/v1/gerichte/' + this.id
+    getAllGerichte() {
+      const endpoint = 'http://localhost:8080/api/v1/gerichte/'
       const requestOptions = {
         method: 'GET',
         redirect: 'follow'
@@ -54,15 +55,48 @@ export default {
 
       fetch(endpoint, requestOptions)
         .then(response => response.json())
-        .then(gericht => {
+        .then(result => result.forEach(gericht => {
           this.gerichte.push(gericht)
-        })
+        }))
         .catch(error => console.log('error', error))
+    },
+
+    getGerichtByID(id) {
+        const endpoint = 'http://localhost:8080/api/v1/gerichte/' + id
+        const requestOptions = {
+          method: 'GET',
+          redirect: 'follow'
+        }
+
+        fetch(endpoint, requestOptions)
+          .then(response => response.json())
+          .then(gericht => {
+            this.gerichte.push(gericht)
+          })
+          .catch(error => console.log('error', error))
+    },
+
+    getRandomGericht() {
+      this.gerichte = []
+      let number = Math.floor(Math.random() * this.zwischenspeicher.length)
+      console.log(number)
+      this.getGerichtByID(this.zwischenspeicher[number].id)
     }
   },
 
-  mounted () {
-    this.gerichte = []
+  mounted() {
+    const endpoint = 'http://localhost:8080/api/v1/gerichte/'
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+
+    fetch(endpoint, requestOptions)
+      .then(response => response.json())
+      .then(result => result.forEach(gericht => {
+        this.zwischenspeicher.push(gericht)
+      }))
+      .catch(error => console.log('error', error))
   }
 }
 </script>
