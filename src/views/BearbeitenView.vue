@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      gericht: this.getGerichtByID()
+      gericht: ''
     }
   },
   methods: {
