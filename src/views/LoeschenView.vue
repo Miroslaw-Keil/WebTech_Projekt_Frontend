@@ -1,7 +1,12 @@
 <template>
   <div class="extract">
-    <h1>Gerichte löschen</h1>
+    <h1>Gerichte bearbeiten</h1>
   </div>
+  <div>
+    Zum Löschen eines Gerichts die entsprechende CheckBox aktivieren und den Delete-button drücken. <br>
+    Zum Bearbeiten eines Gerichts auf den entsprechenden Namen klicken.
+  </div>
+  <br>
   <div>
     <form>
       <div class="input-group mb-3">
@@ -25,7 +30,7 @@
           </tr>
           <tr v-for="gericht in gerichte" :key="gericht.id">
             <td>{{gericht.id}}</td>
-            <td>{{gericht.name}}</td>
+            <td> <router-link :to="{path: '/bearbeiten/' + gericht.id}"> {{gericht.name}} </router-link></td>
             <td>{{gericht.tageszeit}}</td>
             <td>{{gericht.vegan ? 'vegan' : 'nicht vegan'}}</td>
             <td>{{gericht.zubereitungsdauer}}</td>

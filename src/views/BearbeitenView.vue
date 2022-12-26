@@ -1,0 +1,56 @@
+<template>
+  <div>
+    <h1>Seite zum Bearbeiten eines Gerichts</h1>
+    <GerichtCard :gericht="this.gericht"></GerichtCard>
+  </div>
+
+</template>
+
+<script>
+import GerichtCard from '@/components/GerichtCard'
+
+export default {
+  name: 'BearbeitenView',
+  props: {
+    id: String
+  },
+  components: {
+    GerichtCard
+  },
+  data() {
+    return {
+      gericht: this.getGerichtByID()
+    }
+  },
+  methods: {
+    getGerichtByID() {
+      const endpoint = 'http://localhost:8080/api/v1/gerichte/' + this.id
+      const requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      }
+
+      fetch(endpoint, requestOptions)
+        .then(response => response.json())
+        .then(gericht => this.gericht = gericht)
+        .catch(error => console.log('error', error))
+    }
+  },
+  mounted () {
+      const endpoint = 'http://localhost:8080/api/v1/gerichte/' + this.id
+      const requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      }
+
+      fetch(endpoint, requestOptions)
+        .then(response => response.json())
+        .then(gericht => this.gericht = gericht)
+        .catch(error => console.log('error', error))
+  }
+}
+</script>
+
+<style scoped>
+
+</style>

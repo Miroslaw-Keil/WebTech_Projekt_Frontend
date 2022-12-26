@@ -4,6 +4,7 @@ import EinfuegenView from '@/views/EinfuegenView'
 import AuslesenView from '@/views/AuslesenView'
 import alleEinsehenView from '@/views/AlleEinsehenView'
 import LoeschenView from '@/views/LoeschenView'
+import BearbeitenView from '@/views/BearbeitenView'
 
 const routes = [
   {
@@ -30,6 +31,12 @@ const routes = [
     path: '/loeschen',
     name: 'loeschen',
     component: LoeschenView
+  },
+  {
+    path: '/bearbeiten/:id',
+    name: 'bearbeiten',
+    component: BearbeitenView,
+    props: true
   }
 ]
 

@@ -9,7 +9,7 @@
         <div class="navbar-nav">
           <router-link class="nav-link" to="/">Home</router-link>
           <router-link class="nav-link" to="/hinzufuegen">Hinzufügen</router-link>
-          <router-link class="nav-link" to="/loeschen">Löschen</router-link>
+          <router-link class="nav-link" to="/loeschen">Bearbeiten</router-link>
           <router-link class="nav-link" to="/auslesen">Auslesen</router-link>
           <router-link class="nav-link" to="/alle-Einsehen">Alle Einsehen</router-link>
         </div>
