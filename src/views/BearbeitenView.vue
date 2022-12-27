@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Seite zum Bearbeiten eines Gerichts</h1>
-    <GerichtCard :gericht="this.gericht"></GerichtCard>
+    <GerichtCard :id="id"></GerichtCard>
   </div>
 
 </template>
@@ -19,7 +19,13 @@ export default {
   },
   data() {
     return {
-      gericht: ''
+      gericht: {
+        id: '',
+        name: '',
+        tageszeit: '',
+        vegan: false,
+        zubereitungsdauer: 0
+      }
     }
   },
   methods: {
