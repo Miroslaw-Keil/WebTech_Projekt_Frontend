@@ -5,6 +5,9 @@ import AuslesenView from '@/views/AuslesenView'
 import alleEinsehenView from '@/views/AlleEinsehenView'
 import LoeschenView from '@/views/LoeschenView'
 import BearbeitenView from '@/views/BearbeitenView'
+import { LoginCallback } from '@okta/okta-vue'
+import LoginComponent from '@/components/Login.vue'
+import ProfileComponent from '@/components/Profile.vue'
 
 const routes = [
   {
@@ -37,6 +40,21 @@ const routes = [
     name: 'bearbeiten',
     component: BearbeitenView,
     props: true
+  },
+  {
+    path: '/login',
+    component: LoginComponent
+  },
+  {
+    path: '/login/callback',
+    component: LoginCallback
+  },
+  {
+    path: '/profile',
+    component: ProfileComponent,
+    meta: {
+      requiresAuth: true
+    }
   }
 ]
 
