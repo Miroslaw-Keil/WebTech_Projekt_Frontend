@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import GerichtCard from '@/components/GerichtCard'
+import GerichtCard from '@/components/GerichtCreateForm'
 
 export default {
   name: 'BearbeitenView',
