@@ -1,13 +1,13 @@
 <template>
   <div>
     <h1>Seite zum Bearbeiten eines Gerichts</h1>
-    <GerichtCard :id="id"></GerichtCard>
+    <GerichtCreateForm :id="id"></GerichtCreateForm>
   </div>
 
 </template>
 
 <script>
-import GerichtCard from '@/components/GerichtCreateForm'
+import GerichtCreateForm from '@/components/GerichtCreateForm'
 
 export default {
   name: 'BearbeitenView',
@@ -15,7 +15,7 @@ export default {
     id: String
   },
   components: {
-    GerichtCard
+    GerichtCreateForm
   },
   data() {
     return {

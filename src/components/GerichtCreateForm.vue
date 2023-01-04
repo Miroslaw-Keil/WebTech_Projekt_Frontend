@@ -21,7 +21,7 @@
         </select>
       </div>
       <div class="invalid-feedback">
-        Please select a valid gender.
+        Please select a valid daytime.
       </div>
     </div>
     <div class="row mb-3">
@@ -49,7 +49,7 @@
 <script>
 
 export default {
-  name: 'GerichtCard',
+  name: 'GerichtCreateForm',
   props: {
     id: String
   },
