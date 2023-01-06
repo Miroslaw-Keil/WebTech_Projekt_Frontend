@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <router-link class="nav-link" to="/">Home</router-link>
-          <router-link to="/login" v-if="authState && !authState.isAuthenticated">Login</router-link>
+          <router-link class="nav-link" to="/login" v-if="authState && !authState.isAuthenticated">Login</router-link>
           <router-link class="nav-link" to="/hinzufuegen">Hinzufügen</router-link>
           <router-link class="nav-link" to="/loeschen">Bearbeiten</router-link>
           <router-link class="nav-link" to="/auslesen">Auslesen</router-link>
