@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Das ist die Component</h2>
+    <h2>{{gericht.name}} bearbeiten</h2>
   </div>
   <div>
   <form>
