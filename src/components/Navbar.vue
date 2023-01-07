@@ -13,8 +13,8 @@
           <router-link class="nav-link" to="/loeschen">Bearbeiten</router-link>
           <router-link class="nav-link" to="/auslesen">Auslesen</router-link>
           <router-link class="nav-link" to="/alle-Einsehen">Alle Einsehen</router-link>
-          <router-link to="/profile" v-if="authState && authState.isAuthenticated">Protected Profile</router-link>
-          <button v-if="authState && authState.isAuthenticated" v-on:click="logout()">Logout</button>
+          <router-link class="nav-link" to="/profile" v-if="authState && authState.isAuthenticated">Protected Profile</router-link>
+          <router-link class="nav-link" to="/logout"  v-if="authState && authState.isAuthenticated" v-on:click="logout()">Logout</router-link>
         </div>
       </div>
     </div>
