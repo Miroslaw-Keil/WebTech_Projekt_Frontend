@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{gericht.name}} bearbeiten</h2>
+    <h1>{{gericht.name}} bearbeiten</h1>
   </div>
   <div>
   <form>
@@ -40,7 +40,7 @@
     </fieldset>
     <div class="mt-5">
       <button class="btn btn-primary me-3" type="submit" @click="updateGericht">Überschreiben</button>
-      <router-link to="/loeschen"><button class="btn btn-danger">Abbrechen</button></router-link>
+      <router-link to="/bearbeiten"><button class="btn btn-danger">Abbrechen</button></router-link>
     </div>
   </form>
 </div>
@@ -49,7 +49,7 @@
 <script>
 
 export default {
-  name: 'GerichtCreateForm',
+  name: 'GerichtBearbeitenForm',
   props: {
     id: String
   },

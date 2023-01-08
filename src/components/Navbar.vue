@@ -9,10 +9,10 @@
         <div class="navbar-nav">
           <router-link class="nav-link" to="/">Home</router-link>
           <router-link class="nav-link" to="/login" v-if="authState && !authState.isAuthenticated">Login</router-link>
-          <router-link class="nav-link" to="/hinzufuegen">Hinzufügen</router-link>
-          <router-link class="nav-link" to="/loeschen">Bearbeiten</router-link>
-          <router-link class="nav-link" to="/auslesen">Auslesen</router-link>
-          <router-link class="nav-link" to="/alle-Einsehen">Alle Einsehen</router-link>
+          <router-link class="nav-link" to="/hinzufuegen"  v-if="authState && authState.isAuthenticated">Hinzufügen</router-link>
+          <router-link class="nav-link" to="/bearbeiten"  v-if="authState && authState.isAuthenticated">Bearbeiten</router-link>
+          <router-link class="nav-link" to="/auslesen"  v-if="authState && authState.isAuthenticated">Auslesen</router-link>
+          <router-link class="nav-link" to="/alle-Einsehen"  v-if="authState && authState.isAuthenticated">Alle Einsehen</router-link>
           <router-link class="nav-link" to="/profile" v-if="authState && authState.isAuthenticated">Protected Profile</router-link>
           <router-link class="nav-link" to="/logout"  v-if="authState && authState.isAuthenticated" v-on:click="logout()">Logout</router-link>
         </div>

@@ -3,8 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import EinfuegenView from '@/views/EinfuegenView'
 import AuslesenView from '@/views/AuslesenView'
 import alleEinsehenView from '@/views/AlleEinsehenView'
-import LoeschenView from '@/views/LoeschenView'
-import BearbeitenView from '@/views/BearbeitenView'
+import LoeschenView from '@/views/BearbeitenView'
+import BearbeitenView from '@/views/UeberschreibenView'
 import { LoginCallback } from '@okta/okta-vue'
 import LoginComponent from '@/components/Login.vue'
 import ProfileComponent from '@/components/Profile.vue'
@@ -31,13 +31,13 @@ const routes = [
     component: alleEinsehenView
   },
   {
-    path: '/loeschen',
-    name: 'loeschen',
+    path: '/bearbeiten',
+    name: 'bearbeiten',
     component: LoeschenView
   },
   {
-    path: '/bearbeiten/:id',
-    name: 'bearbeiten',
+    path: '/ueberschreiben/:id',
+    name: 'ueberschreiben',
     component: BearbeitenView,
     props: true
   },

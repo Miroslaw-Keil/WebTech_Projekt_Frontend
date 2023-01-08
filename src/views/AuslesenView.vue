@@ -1,6 +1,6 @@
 <template>
   <div class="extract">
-    <h1>Seite um ein zufälliges Gericht zu erhalten</h1>
+    <h1>Ein zufälliges Gericht erhalten</h1>
   </div>
   <br>
   <div>

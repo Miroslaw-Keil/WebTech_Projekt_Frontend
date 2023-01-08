@@ -1,9 +1,9 @@
 <template>
-  <div class="home">
-    <h1>Das ist die Homepage</h1>
+  <div class="home" id="content">
+    <h1>Digitales Kochbuch</h1>
   </div>
-  <div>
-    <img alt="Bold and Brash" src="../assets/bold_and_brash.png" width="600" height="400">
+  <div style="text-align: center;">
+    <img src="../assets/bold_and_brash.png" width="750" height="500" alt="My Image" />
   </div>
 </template>
 
@@ -21,5 +21,12 @@ export default {
 </script>
 
 <style>
-
+#content {
+  position: relative;
+}
+#content img {
+  position: absolute;
+  top: 10px;
+  right: 150px;
+}
 </style>

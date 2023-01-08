@@ -1,12 +1,12 @@
 import { flushPromises, mount, shallowMount } from '@vue/test-utils'
-import GerichtCreateForm from '@/components/GerichtCreateForm'
-import BearbeitenView from '@/views/BearbeitenView'
+import GerichtBearbeitenForm from '@/components/GerichtBearbeitenForm'
+import UeberschreibenView from '@/views/UeberschreibenView'
 import App from '@/App'
 import Navbar from '@/components/Navbar'
 import AlleEinsehenView from '@/views/AlleEinsehenView'
-import LoeschenView from '@/views/LoeschenView'
+import BearbeitenView from '@/views/BearbeitenView'
 
-describe('Testing GerichtCreateForm.vue', () => {
+describe('Testing multiple Views', () => {
   let twoGerichteResponse = [
     { id: '1', name: 'Spaghetti', tageszeit: 'Mittag', vegan: false, zubereitungsdauer: 30},
     { id: '2', name: 'Avocadotoast', tageszeit: 'Morgen', vegan: true, zubereitungsdauer: 5}
@@ -21,9 +21,9 @@ describe('Testing GerichtCreateForm.vue', () => {
   })
 
   it('should have Create-Form component', () => {
-    const wrapper = mount(BearbeitenView)
+    const wrapper = mount(UeberschreibenView)
 
-    const createForm = wrapper.findComponent(GerichtCreateForm)
+    const createForm = wrapper.findComponent(GerichtBearbeitenForm)
     expect(createForm.exists()).toBeTruthy()
   }),
 
@@ -51,7 +51,7 @@ describe('Testing GerichtCreateForm.vue', () => {
     fetch.mockResponseOnce(JSON.stringify(twoGerichteResponse))
 
     const gericht = twoGerichteResponse[0].name
-    const wrapper = shallowMount(LoeschenView)
+    const wrapper = shallowMount(BearbeitenView)
 
     await flushPromises()
 
@@ -63,7 +63,7 @@ describe('Testing GerichtCreateForm.vue', () => {
 
     const id = oneGerichtResponse.id
     const gericht = oneGerichtResponse.name
-    const wrapper = shallowMount(GerichtCreateForm, {
+    const wrapper = shallowMount(GerichtBearbeitenForm, {
       props: {id}
     })
 
